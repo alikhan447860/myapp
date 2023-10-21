@@ -2,12 +2,12 @@ import { useState } from "react"
 
 export default function Textarea(props) {
     const handleupclick=()=>{
-      console.log("you have click the change button"+text);
+    //   console.log("you have click the change button"+text);
       let newtext=text.toUpperCase();
       setText(newtext);
     }
     const handleonchange=(event)=>{
-        console.log("you have change");
+        // console.log("you have change");
         setText(event.target.value);
 
     }
