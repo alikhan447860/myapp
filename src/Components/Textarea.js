@@ -16,6 +16,9 @@ export default function Textarea(props) {
         setText(event.target.value);
 
     }
+    const handleclearclick=()=>{
+      setText("");
+    }
     const[text,setText]=useState("Enteclar the text here")
   return (<>
 
@@ -24,6 +27,7 @@ export default function Textarea(props) {
   <textarea className="form-control"  value={text} onChange={handleonchange} placeholder="Leave a comment here" id="floatingTextarea" rows="8"></textarea><br />
   <button className="btn btn-outline-success mx-2" onClick={handleupclick}>Convert to Upercase</button>
   <button className="btn btn-outline-success mx-2" onClick={handleloclick}>Convert to lowercase</button>
+  <button className="btn btn-outline-danger mx-2" onClick={handleclearclick}>Clear Text</button>
 
 </div>
   <div className="container my-4" >
