@@ -19,15 +19,26 @@ export default function Textarea(props) {
     const handleclearclick=()=>{
       setText("");
     }
+    const handlecopy=()=>{
+      var text=document.getElementById("mybox");
+      text.select();
+      navigator.clipboard.writeText(text.value);
+    }
+    // const handleextraspace=()=>{
+    //   let newText= text.split(/[]+/);
+    //   setText(newText.join(" "))
+    // }
     const[text,setText]=useState("Enteclar the text here")
   return (<>
 
 <div className="container" ss="form-floating">
 <h1>{props.heading}</h1>
-  <textarea className="form-control"  value={text} onChange={handleonchange} placeholder="Leave a comment here" id="floatingTextarea" rows="8"></textarea><br />
-  <button className="btn btn-outline-success mx-2" onClick={handleupclick}>Convert to Upercase</button>
-  <button className="btn btn-outline-success mx-2" onClick={handleloclick}>Convert to lowercase</button>
-  <button className="btn btn-outline-danger mx-2" onClick={handleclearclick}>Clear Text</button>
+  <textarea className="form-control"  value={text}  onChange={handleonchange} placeholder="Leave a comment here" id="mybox" rows="8"></textarea><br />
+  <button className="btn btn-outline-success mx-1" onClick={handleupclick}>Convert to Upercase</button>
+  <button className="btn btn-outline-success mx-1" onClick={handleloclick}>Convert to lowercase</button>
+  <button className="btn btn-outline-danger mx-1" onClick={handleclearclick}>Clear Text</button>
+  <button className="btn btn-outline-primary mx-1" onClick={handlecopy}>copy Text</button>
+{/* <button className=" btn btn-primary mx-1" onClick={handleextraspace}>Remove extra space</button> */}
 
 </div>
   <div className="container my-4" >
