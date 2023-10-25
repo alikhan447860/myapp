@@ -5,11 +5,14 @@ export default function Textarea(props) {
     //   console.log("you have click the change button"+text);
       let newtext=text.toUpperCase();
       setText(newtext);
+      document.title= "TextUtil-uppercase";
     }
     const handleloclick=()=>{
         //   console.log("you have click the change button"+text);
           let newtext=text.toLowerCase();
           setText(newtext);
+          document.title= "TextUtil-lowercase";
+
         }
     const handleonchange=(event)=>{
         // console.log("you have change");
@@ -18,11 +21,15 @@ export default function Textarea(props) {
     }
     const handleclearclick=()=>{
       setText("");
+      document.title= "TextUtil-textclear";
+
     }
     const handlecopy=()=>{
       var text=document.getElementById("mybox");
       text.select();
       navigator.clipboard.writeText(text.value);
+      document.title= "TextUtil-copytext";
+
     }
     // const handleextraspace=()=>{
     //   let newText= text.split(/[]+/);
